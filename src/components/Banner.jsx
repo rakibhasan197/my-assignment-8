@@ -4,9 +4,9 @@ import React from 'react';
 
 const Banner = () => {
   return (
-    <div className='max-w-7xl mx-auto my-8 px-2'>
+    <div className='container mx-auto my-8 px-2'>
       <div
-        className='relative h-[70vh] md:h-[78vh] rounded-3xl overflow-hidden flex items-center justify-center text-center px-4 md:px-10 bg-cover bg-center'
+        className='relative h-[70vh] md:h-[78vh] rounded-xl overflow-hidden flex items-center justify-center text-center px-4 md:px-10 bg-cover bg-center'
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1470&auto=format&fit=crop')",
