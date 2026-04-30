@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -14,13 +15,13 @@ const Navbar = () => {
        
         <Link href={'/'}>
          
-          <h3 className="font-black text-lg">BookNest</h3>
+          <h3 className="font-black text-lg">Book<span className="text-red-900">Nest</span></h3>
         </Link>
 
         
         <ul className="hidden md:flex items-center gap-5 text-sm">
           <li>
-            <Link href={"/"}>Home</Link>
+            <Link href={"/"}><Button variant="secondary" className=' text-red-900'>Home</Button></Link>
           </li>
           <li>
             <Link href={"/all-books"}>All Books</Link>
@@ -35,10 +36,10 @@ const Navbar = () => {
         <div className="hidden md:flex gap-4">
           <ul className="flex items-center text-sm gap-4">
             <li>
-              <Link href={"/signup"}>SignUp</Link>
+              <Link href={"/signup"}><Button variant="secondary" className="text-red-900">SignUp</Button></Link>
             </li>
             <li>
-              <Link href={"/signin"}>LogIn</Link>
+              <Link href={"/signin"}><Button variant="outline">LogIn</Button></Link>
             </li>
           </ul>
         </div>

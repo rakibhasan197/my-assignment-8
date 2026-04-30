@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "The Silent Forest",
+    "author": "Emma Richardson",
+    "description": "A mysterious story about a hidden forest where secrets of the past come alive.",
+    "category": "Story",
+    "available_quantity": 8,
+    "image_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 2,
+    "title": "JavaScript Mastermind",
+    "author": "Daniel Cooper",
+    "description": "A complete guide to modern JavaScript development for beginners and professionals.",
+    "category": "Tech",
+    "available_quantity": 12,
+    "image_url": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4"
+  },
+  {
+    "id": 3,
+    "title": "Beyond the Stars",
+    "author": "Sophia Bennett",
+    "description": "Explore the wonders of galaxies, black holes, and the endless mysteries of the universe.",
+    "category": "Science",
+    "available_quantity": 5,
+    "image_url": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564"
+  },
+  {
+    "id": 4,
+    "title": "Whispers of the River",
+    "author": "Olivia Turner",
+    "description": "A touching fictional journey of friendship, betrayal, and hope by the riverside.",
+    "category": "Story",
+    "available_quantity": 10,
+    "image_url": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
+  },
+  {
+    "id": 5,
+    "title": "React in Action",
+    "author": "Michael Stevens",
+    "description": "Learn how to build scalable and interactive user interfaces using React.js.",
+    "category": "Tech",
+    "available_quantity": 7,
+    "image_url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97"
+  },
+  {
+    "id": 6,
+    "title": "The Human Genome",
+    "author": "Dr. Alan Morris",
+    "description": "An insightful scientific explanation of DNA, genes, and the blueprint of life.",
+    "category": "Science",
+    "available_quantity": 9,
+    "image_url": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69"
+  },
+  {
+    "id": 7,
+    "title": "Moonlight Promise",
+    "author": "Charlotte Hayes",
+    "description": "A heartwarming story of dreams, struggles, and destiny under the moonlit sky.",
+    "category": "Story",
+    "available_quantity": 6,
+    "image_url": "https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+  },
+  {
+    "id": 8,
+    "title": "Node.js Backend Blueprint",
+    "author": "Ryan Walker",
+    "description": "Master backend development, APIs, and server-side logic with Node.js and Express.",
+    "category": "Tech",
+    "available_quantity": 11,
+    "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475"
+  },
+  {
+    "id": 9,
+    "title": "Quantum Frontiers",
+    "author": "Liam Parker",
+    "description": "Dive deep into quantum mechanics and understand the strange laws of particles.",
+    "category": "Science",
+    "available_quantity": 4,
+    "image_url": "https://images.unsplash.com/photo-1507413245164-6160d8298b31"
+  },
+  {
+    "id": 10,
+    "title": "The Lost Diary",
+    "author": "Hannah Brooks",
+    "description": "A gripping story of an old diary that changes the lives of everyone who reads it.",
+    "category": "Story",
+    "available_quantity": 13,
+    "image_url": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+  },
+  {
+    "id": 11,
+    "title": "Python Powerhouse",
+    "author": "Ethan Miller",
+    "description": "A practical handbook for Python programming, automation, and problem-solving.",
+    "category": "Tech",
+    "available_quantity": 9,
+    "image_url": "https://images.unsplash.com/photo-1526379095098-d400fd0bf935"
+  },
+  {
+    "id": 12,
+    "title": "Secrets of Biology",
+    "author": "Dr. Rachel Green",
+    "description": "Understand ecosystems, cells, evolution, and the fascinating science of life.",
+    "category": "Science",
+    "available_quantity": 7,
+    "image_url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d"
+  }
+]
