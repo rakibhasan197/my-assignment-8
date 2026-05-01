@@ -11,11 +11,11 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 
 export default function SignUpPage() {
-
-   const router = useRouter()
+  const router = useRouter();
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -24,17 +24,34 @@ export default function SignUpPage() {
     const image = e.target.image.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    
-    const {data, error} = await authClient.signUp.email({
+
+    const { data, error } = await authClient.signUp.email({
       name,
       email,
       password,
       image,
-    })
+    });
+
     console.log(data, error);
-    if(!error){
-      router.push('/')
+
+    // ❌ error handling first
+    if (error) {
+      if (
+        error?.message?.includes("already") ||
+        error?.message?.includes("exists")
+      ) {
+        return toast.error("User already registered");
+      }
+
+      return toast.error("Signup failed");
     }
+
+    // ✅ success only when no error
+    toast.success("Signup successful");
+
+    setTimeout(() => {
+      router.push("/signin");
+    }, 900);
   };
 
   return (
@@ -42,6 +59,7 @@ export default function SignUpPage() {
       <h1 className="text-center text-2xl font-bold">Register page</h1>
 
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
+        
         <TextField isRequired name="name" type="text">
           <Label>Name</Label>
           <Input placeholder="Enter your name" />
@@ -62,7 +80,6 @@ export default function SignUpPage() {
             if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
               return "Please enter a valid email address";
             }
-
             return null;
           }}
         >
@@ -86,7 +103,6 @@ export default function SignUpPage() {
             if (!/[0-9]/.test(value)) {
               return "Password must contain at least one number";
             }
-
             return null;
           }}
         >
@@ -98,16 +114,14 @@ export default function SignUpPage() {
           <FieldError />
         </TextField>
 
-        
-         <Button
-            type="submit"
-            className="w-full bg-blue-600 text-white font-semibold rounded-xl py-6 hover:bg-blue-700 transition-all duration-300 shadow-md"
-          >
-            <Check />
-            Log In
-          </Button>
-          
-        
+        <Button
+          type="submit"
+          className="w-full bg-blue-600 text-white font-semibold rounded-xl py-6 hover:bg-blue-700 transition-all duration-300 shadow-md"
+        >
+          <Check />
+          Register
+        </Button>
+
       </Form>
     </Card>
   );

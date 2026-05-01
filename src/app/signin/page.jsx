@@ -11,21 +11,35 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 export default function SignInPage() {
+  const router = useRouter();
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    const { data, error } = await authClient.signIn.email({
+    const { error } = await authClient.signIn.email({
       email,
       password,
-      callbackURL: "/",
+     
     });
 
-    console.log(data, error);
+    if (error) {
+      toast.error("Invalid email or password ❌");
+      return;
+    }
+
+    toast.success("Login successful 🎉");
+
+    // give time to show toast before redirect
+    setTimeout(() => {
+      router.push("/");
+    }, 900);
   };
 
   return (
@@ -52,11 +66,8 @@ export default function SignInPage() {
               return null;
             }}
           >
-            <Label className="font-medium text-gray-700">Email</Label>
-            <Input
-              placeholder="john@example.com"
-              className="rounded-xl"
-            />
+            <Label>Email</Label>
+            <Input placeholder="john@example.com" />
             <FieldError />
           </TextField>
 
@@ -70,21 +81,18 @@ export default function SignInPage() {
                 return "Password must be at least 8 characters";
               }
               if (!/[A-Z]/.test(value)) {
-                return "Password must contain at least one uppercase letter";
+                return "Must contain uppercase letter";
               }
               if (!/[0-9]/.test(value)) {
-                return "Password must contain at least one number";
+                return "Must contain number";
               }
               return null;
             }}
           >
-            <Label className="font-medium text-gray-700">Password</Label>
-            <Input
-              placeholder="Enter your password"
-              className="rounded-xl"
-            />
+            <Label>Password</Label>
+            <Input placeholder="Enter your password" />
             <Description className="text-xs text-gray-400">
-              Must be at least 8 characters with 1 uppercase and 1 number
+              Must be 8+ chars with uppercase & number
             </Description>
             <FieldError />
           </TextField>
@@ -97,13 +105,6 @@ export default function SignInPage() {
             Log In
           </Button>
         </Form>
-
-        <p className="text-center text-sm text-gray-500 mt-5">
-          Don’t have an account?{" "}
-          <span className="text-blue-600 font-medium cursor-pointer hover:underline">
-            Register
-          </span>
-        </p>
       </Card>
     </div>
   );
