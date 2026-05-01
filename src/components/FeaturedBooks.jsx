@@ -1,10 +1,10 @@
-import Image from "next/image";
 import BookCard from "./BookCard";
 
 const FeaturedBooks = async () => {
-  const res = await fetch("https://my-assignment-8.vercel.app/data.json", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    "https://my-assignment-8.vercel.app/data.json",
+    { cache: "no-store" }
+  );
 
   const books = await res.json();
 
@@ -14,7 +14,7 @@ const FeaturedBooks = async () => {
 
       <div className="grid grid-cols-3 gap-5">
         {books.map((book) => (
-         <BookCard key={book.id}book={book}></BookCard>
+          <BookCard key={book.id} book={book} />
         ))}
       </div>
     </div>

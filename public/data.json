@@ -6,105 +6,105 @@
     "description": "A mysterious story about a hidden forest where secrets of the past come alive.",
     "category": "Story",
     "available_quantity": 8,
-    "image_url": "https://cdn.pixabay.com/photo/2016/11/29/06/15/books-1869616_1280.jpg"
+    "image_url": "https://images.unsplash.com/photo-1455885666463-27f2f0b4d1e0?auto=format&fit=crop&w=800&q=60"
   },
   {
     "id": 2,
-    "title": "Echoes of Tomorrow",
-    "author": "Daniel Hayes",
-    "description": "A scientist discovers signals from the future hidden in sound waves.",
-    "category": "Science",
-    "available_quantity": 10,
-    "image_url": "https://cdn.pixabay.com/photo/2016/03/26/13/09/book-1283865_1280.jpg"
+    "title": "JavaScript Mastermind",
+    "author": "Daniel Cooper",
+    "description": "A complete guide to modern JavaScript development for beginners and professionals.",
+    "category": "Tech",
+    "available_quantity": 12,
+    "image_url": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=60"
   },
   {
     "id": 3,
-    "title": "The Silent Ocean",
-    "author": "Sophia Lane",
-    "description": "A deep sea expedition reveals a lost underwater civilization.",
+    "title": "Beyond the Stars",
+    "author": "Sophia Bennett",
+    "description": "Explore galaxies, black holes, and the mysteries of the universe.",
     "category": "Science",
-    "available_quantity": 6,
-    "image_url": "https://cdn.pixabay.com/photo/2015/09/05/21/52/library-925590_1280.jpg"
+    "available_quantity": 5,
+    "image_url": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=800&q=60"
   },
   {
     "id": 4,
-    "title": "Midnight Letters",
-    "author": "Olivia Brown",
-    "description": "A girl receives letters predicting real events every midnight.",
+    "title": "Whispers of the River",
+    "author": "Olivia Turner",
+    "description": "A touching fictional journey of friendship and hope by the riverside.",
     "category": "Story",
-    "available_quantity": 12,
-    "image_url": "https://cdn.pixabay.com/photo/2015/11/19/21/11/reading-1052013_1280.jpg"
+    "available_quantity": 10,
+    "image_url": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=800&q=60"
   },
   {
     "id": 5,
-    "title": "Shadow of the Mountains",
-    "author": "Michael Reed",
-    "description": "A hidden mountain village holds a secret that changes history.",
-    "category": "Story",
+    "title": "React in Action",
+    "author": "Michael Stevens",
+    "description": "Learn how to build interactive UIs using React.js.",
+    "category": "Tech",
     "available_quantity": 7,
-    "image_url": "https://cdn.pixabay.com/photo/2017/08/01/08/29/book-2563382_1280.jpg"
+    "image_url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=60"
   },
   {
     "id": 6,
-    "title": "The Time Traveler's Code",
-    "author": "Liam Foster",
-    "description": "A mysterious device opens doors to different timelines.",
+    "title": "The Human Genome",
+    "author": "Dr. Alan Morris",
+    "description": "Explanation of DNA, genes, and the blueprint of life.",
     "category": "Science",
     "available_quantity": 9,
-    "image_url": "https://cdn.pixabay.com/photo/2017/01/20/00/30/book-1995804_1280.jpg"
+    "image_url": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=60"
   },
   {
     "id": 7,
-    "title": "Crimson Sky",
-    "author": "Charlotte Gray",
-    "description": "A red sky appears every decade and changes human behavior.",
+    "title": "Moonlight Promise",
+    "author": "Charlotte Hayes",
+    "description": "A story of dreams, struggles, and destiny under moonlight.",
     "category": "Story",
-    "available_quantity": 11,
-    "image_url": "https://cdn.pixabay.com/photo/2015/09/05/21/51/reading-925589_1280.jpg"
+    "available_quantity": 6,
+    "image_url": "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800&q=60"
   },
   {
     "id": 8,
-    "title": "Hidden Signals",
-    "author": "Ryan Cole",
-    "description": "Scientists decode mysterious signals from deep space.",
-    "category": "Science",
-    "available_quantity": 5,
-    "image_url": "https://cdn.pixabay.com/photo/2015/12/08/00/29/books-1082304_1280.jpg"
+    "title": "Node.js Backend Blueprint",
+    "author": "Ryan Walker",
+    "description": "Master backend development and APIs with Node.js.",
+    "category": "Tech",
+    "available_quantity": 11,
+    "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=60"
   },
   {
     "id": 9,
-    "title": "The Lost City",
-    "author": "Hannah Scott",
-    "description": "An ancient city buried under sand is still alive.",
-    "category": "Story",
-    "available_quantity": 13,
-    "image_url": "https://cdn.pixabay.com/photo/2016/01/19/17/45/book-1149034_1280.jpg"
+    "title": "Quantum Frontiers",
+    "author": "Liam Parker",
+    "description": "Dive into quantum mechanics and particle physics.",
+    "category": "Science",
+    "available_quantity": 4,
+    "image_url": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=800&q=60"
   },
   {
     "id": 10,
-    "title": "Dream Mechanics",
-    "author": "Ethan Brooks",
-    "description": "A machine that enters dreams starts changing reality.",
-    "category": "Science",
-    "available_quantity": 8,
-    "image_url": "https://cdn.pixabay.com/photo/2015/09/05/21/51/library-925589_1280.jpg"
+    "title": "The Lost Diary",
+    "author": "Hannah Brooks",
+    "description": "A diary that changes lives of those who read it.",
+    "category": "Story",
+    "available_quantity": 13,
+    "image_url": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=60"
   },
   {
     "id": 11,
-    "title": "Whispering Shadows",
-    "author": "Noah Wright",
-    "description": "Shadows start speaking and revealing hidden truths.",
-    "category": "Story",
-    "available_quantity": 6,
-    "image_url": "https://cdn.pixabay.com/photo/2016/11/18/17/20/book-1835751_1280.jpg"
+    "title": "Python Powerhouse",
+    "author": "Ethan Miller",
+    "description": "Python programming, automation, and problem solving.",
+    "category": "Tech",
+    "available_quantity": 9,
+    "image_url": "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=800&q=60"
   },
   {
     "id": 12,
-    "title": "Parallel Realms",
-    "author": "Dr. Rachel Stone",
-    "description": "Discovery of parallel universes opens unknown realities.",
+    "title": "Secrets of Biology",
+    "author": "Dr. Rachel Green",
+    "description": "Ecosystems, cells, evolution, and life science.",
     "category": "Science",
-    "available_quantity": 9,
-    "image_url": "https://cdn.pixabay.com/photo/2015/09/05/21/51/books-925590_1280.jpg"
+    "available_quantity": 7,
+    "image_url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=60"
   }
 ]
