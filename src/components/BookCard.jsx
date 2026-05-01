@@ -10,7 +10,7 @@ const BookCard = ({ book }) => {
     transition-all duration-500 transform 
     hover:-translate-y-3 hover:scale-[1.03] mx-auto">
 
-    
+
       <div className="relative w-full h-[300px] overflow-hidden bg-gray-100">
 
         <Image
@@ -29,19 +29,26 @@ const BookCard = ({ book }) => {
 
         <p className="text-sm text-gray-500">{book.author}</p>
 
-        <p className="text-xs text-gray-400">{book.category}</p>
+        <p
+          className="inline-block text-[11px] font-semibold uppercase tracking-wide
+           px-3 py-1 rounded-full
+          bg-gradient-to-r from-blue-50 to-indigo-100
+        text-blue-700 shadow-sm"
+        >
+          {book.category}
+        </p>
       </div>
 
-   
+
       <div className="p-3 pt-0">
-     <Link href={`/all-books/${book.id}`}>
+        <Link href={`/all-books/${book.id}`}>
           <Button className="w-full bg-blue-600 text-white 
         hover:bg-blue-700 
         shadow-md hover:shadow-blue-400/40 
         transition-all duration-300">
-          View Details
-        </Button>
-     </Link>
+            View Details
+          </Button>
+        </Link>
       </div>
 
     </div>

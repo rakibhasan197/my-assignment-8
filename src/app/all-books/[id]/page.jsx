@@ -16,7 +16,7 @@ const BookDetailsPage = async ({ params }) => {
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-14 items-center bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
 
-          {/* Left Side Image */}
+     
           <div className="flex justify-center">
             <div className="overflow-hidden rounded-3xl shadow-2xl group">
               <Image
@@ -29,7 +29,7 @@ const BookDetailsPage = async ({ params }) => {
             </div>
           </div>
 
-          {/* Right Side Content */}
+         
           <div className="space-y-6">
             <span className="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-2 rounded-full shadow-sm">
               {book.category}

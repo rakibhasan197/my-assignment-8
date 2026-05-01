@@ -30,7 +30,7 @@ const AllBooksPage = () => {
         All Books is Here
       </h2>
 
-      {/* 🔍 SEARCH */}
+  
       <div className="flex justify-center mb-6">
         <input
           value={search}
@@ -40,10 +40,10 @@ const AllBooksPage = () => {
         />
       </div>
 
-      {/* 📚 BOOKS */}
+      
       {filtered.length === 0 ? (
         <p className="text-center text-gray-500">
-          No books found 😢
+          No books found 
         </p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
