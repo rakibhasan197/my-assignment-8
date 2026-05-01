@@ -99,9 +99,12 @@ export default function SignUpPage() {
         </TextField>
 
         
-          <Button type="submit">
+         <Button
+            type="submit"
+            className="w-full bg-blue-600 text-white font-semibold rounded-xl py-6 hover:bg-blue-700 transition-all duration-300 shadow-md"
+          >
             <Check />
-            Register
+            Log In
           </Button>
           
         
