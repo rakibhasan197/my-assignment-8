@@ -10,7 +10,7 @@ const FeaturedBooks = async () => {
 
   return (
     <div className="container mx-auto my-8">
-      <h1 className="font-bold text-xl mb-8">Featured Books</h1>
+      <h1 className="font-bold text-xl text-center mb-8">Featured Books</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {books.slice(1,5).map((book) => (
