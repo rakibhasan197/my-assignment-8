@@ -1,9 +1,10 @@
 import Banner from "@/components/Banner";
 import BreakingNews from "@/components/BreakingNews";
+import FeaturedCard from "@/components/FeaturedCard";
 import FeaturedBooks from "@/components/FeaturedBooks";
 import Footer from "@/components/Footer";
-import { discoverValidationDepths } from "next/dist/server/app-render/instant-validation/instant-validation";
-import Image from "next/image";
+import AboutUs from "@/components/AboutUs";
+
 
 export default function Home() {
   return (
@@ -11,7 +12,10 @@ export default function Home() {
     <Banner></Banner>
     <BreakingNews></BreakingNews>
     <FeaturedBooks></FeaturedBooks>
+    <FeaturedCard></FeaturedCard>
+    <AboutUs></AboutUs>
     <Footer></Footer>
+    
    </div>
   );
 }

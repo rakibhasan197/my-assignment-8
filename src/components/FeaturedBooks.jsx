@@ -9,11 +9,11 @@ const FeaturedBooks = async () => {
   const books = await res.json();
 
   return (
-    <div>
-      <h1>Featured Books</h1>
+    <div className="container mx-auto my-8">
+      <h1 className="font-bold text-xl mb-8">Featured Books</h1>
 
-      <div className="grid grid-cols-3 gap-5">
-        {books.map((book) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        {books.slice(1,5).map((book) => (
           <BookCard key={book.id} book={book} />
         ))}
       </div>
