@@ -46,7 +46,7 @@ export default function SignUpPage() {
       return toast.error("Signup failed");
     }
 
-    // ✅ success only when no error
+ 
     toast.success("Signup successful");
 
     setTimeout(() => {

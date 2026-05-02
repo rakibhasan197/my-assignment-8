@@ -1,12 +1,23 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
 const Navbar = () => {
+
+
   const [open, setOpen] = useState(false);
+
+  const userData = authClient.useSession()
+   const user = userData.data?.user
+   console.log(user)
+
+   const handleLogOut = async ()=>{
+     await authClient.signOut();
+   }
 
   return (
     <div className="shadow px-2 relative">
@@ -28,20 +39,27 @@ const Navbar = () => {
           </li>
           
           <li>
-            <Link href={"/my-profile"}>My Profile</Link>
+            <Link href={"/profile"}>My Profile</Link>
           </li>
         </ul>
 
        
         <div className="hidden md:flex gap-4">
-          <ul className="flex items-center text-sm gap-4">
+         { !user && <ul className="flex items-center text-sm gap-4">
             <li>
               <Link href={"/signup"}><Button variant="secondary" className="text-red-900">SignUp</Button></Link>
             </li>
             <li>
               <Link href={"/signin"}><Button variant="outline">LogIn</Button></Link>
             </li>
-          </ul>
+          </ul>}
+
+          {
+            user && <div className="flex gap-4 items-center">
+              <h2 className="font-semibold">{user?.name}</h2>
+              <Button onClick={handleLogOut} size="sm" variant="danger">LogOut</Button>
+            </div>
+          }
         </div>
 
         <button
@@ -73,9 +91,10 @@ const Navbar = () => {
             </li>
             <li>
               <Link onClick={() => setOpen(false)} href={"/profile"}>
-                Profile
+               My Profile
               </Link>
             </li>
+
             <li>
               <Link onClick={() => setOpen(false)} href={"/signup"}>
                 SignUp
@@ -86,6 +105,8 @@ const Navbar = () => {
                 LogIn
               </Link>
             </li>
+
+
           </ul>
         </div>
       )}
