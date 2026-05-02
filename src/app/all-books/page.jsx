@@ -53,7 +53,7 @@ const AllBooksPage = () => {
           {filtered.length === 0 ? (
             <p className="text-center text-gray-500">No books found</p>
           ) : (
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
               {filtered.map((book) => (
                 <BookCard key={book.id} book={book} />
               ))}

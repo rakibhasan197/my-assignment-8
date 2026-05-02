@@ -4,6 +4,8 @@ import { authClient } from "@/lib/auth-client";
 import { Button } from "@heroui/react";
 import Link from "next/link";
 import { useState } from "react";
+import { FiMenu } from "react-icons/fi";
+import { IoMenuSharp } from "react-icons/io5";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -64,7 +66,7 @@ const Navbar = () => {
           className="rounded border px-3 py-1 text-sm font-semibold md:hidden"
           type="button"
         >
-          {open ? "Close" : "Menu"}
+          {open ? "X" : <FiMenu />}
         </button>
       </nav>
 

@@ -5,48 +5,39 @@ import React from "react";
 
 const BookCard = ({ book }) => {
   return (
-    <div className="group w-full max-w-[220px] rounded-2xl overflow-hidden bg-white 
-    shadow-md hover:shadow-[0_20px_50px_rgba(0,0,0,0.25)] 
-    transition-all duration-500 transform 
-    hover:-translate-y-3 hover:scale-[1.03] mx-auto">
+    <div className="group w-full max-w-[220px] rounded-xl overflow-hidden bg-white 
+    shadow-md hover:shadow-xl 
+    transition-all duration-300 transform 
+    hover:-translate-y-2 mx-auto">
 
+      {/* IMAGE (height reduced) */}
+     <div className="relative w-full aspect-[1/1] bg-gray-100 overflow-hidden">
+  <Image
+    src={book.image_url}
+    alt={book.title}
+    fill
+    sizes="220px"
+    className="object-cover group-hover:scale-105 transition-transform duration-500"
+  />
+</div>
 
-      <div className="relative w-full h-[300px] overflow-hidden bg-gray-100">
-
-        <Image
-          src={book.image_url}
-          alt={book.title}
-          fill
-          sizes="(max-width: 640px) 220px, (max-width: 1024px) 25vw, 220px"
-          className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-        />
-
-      </div>
-
-      <div className="p-3 space-y-1 transition-all duration-500 group-hover:-translate-y-1">
-        <h1 className="text-lg font-bold text-gray-800 group-hover:text-blue-600 transition">
+      {/* CONTENT (less padding = shorter card) */}
+      <div className="p-2 space-y-0.5 group-hover:-translate-y-1 transition-all duration-300">
+        <h1 className="text-sm font-bold text-gray-800 group-hover:text-blue-600">
           {book.title}
         </h1>
 
-        <p className="text-sm text-gray-500">{book.author}</p>
+        <p className="text-xs text-gray-500">{book.author}</p>
 
-        <p
-          className="inline-block text-[11px] font-semibold uppercase tracking-wide
-           px-3 py-1 rounded-full
-          bg-gradient-to-r from-blue-50 to-indigo-100
-        text-blue-700 shadow-sm"
-        >
+        <p className="inline-block text-[10px] font-semibold uppercase px-2 py-[2px] rounded-full bg-blue-50 text-blue-700">
           {book.category}
         </p>
       </div>
 
-
-      <div className="p-3 pt-0">
+      {/* BUTTON (compact) */}
+      <div className="p-2 pt-0">
         <Link href={`/all-books/${book.id}`}>
-          <Button className="w-full bg-blue-600 text-white 
-        hover:bg-blue-700 
-        shadow-md hover:shadow-blue-400/40 
-        transition-all duration-300">
+          <Button className="w-full text-xs bg-blue-600 text-white hover:bg-blue-700 transition">
             View Details
           </Button>
         </Link>

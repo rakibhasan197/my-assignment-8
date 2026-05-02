@@ -27,12 +27,9 @@ const MyProfilePage = () => {
 
         <div className="w-full rounded-lg bg-gray-50 p-4 text-left text-sm">
           <p>
-            <span className="font-semibold">User ID:</span> {user?.id || "N/A"}
+            <span className="font-semibold mx-auto">User ID:</span> {user?.id || "N/A"}
           </p>
-          <p>
-            <span className="font-semibold">Email verified:</span>{" "}
-            {user?.emailVerified ? "Yes" : "No"}
-          </p>
+         
         </div>
 
         <Link href="/update-profile">
