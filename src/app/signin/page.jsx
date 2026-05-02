@@ -13,6 +13,7 @@ import {
 } from "@heroui/react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { FaGoogle } from "react-icons/fa";
 
 export default function SignInPage() {
   const router = useRouter();
@@ -30,28 +31,32 @@ export default function SignInPage() {
     });
 
     if (error) {
-      toast.error("Invalid email or password ❌");
+      toast.error("Invalid email or password");
       return;
     }
 
-    toast.success("Login successful 🎉");
+    toast.success("Login successful");
 
-    // give time to show toast before redirect
+    
     setTimeout(() => {
       router.push("/");
     }, 900);
   };
+
+  const handleGoogleLogin = async()=>{
+     await authClient.signIn.social({
+      provider: 'google'
+     })
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-100 px-4">
       <Card className="w-full max-w-md py-8 px-7 rounded-3xl shadow-2xl border border-gray-100">
         
         <h1 className="text-center text-3xl font-bold text-gray-800">
-          Welcome Back 👋
+          Login Here
         </h1>
-        <p className="text-center text-sm text-gray-500 mt-1 mb-6">
-          Sign in to continue exploring your favorite books
-        </p>
+       
 
         <Form className="flex flex-col gap-5" onSubmit={onSubmit}>
           
@@ -105,6 +110,10 @@ export default function SignInPage() {
             Log In
           </Button>
         </Form>
+
+        <p className="text-center">Or</p>
+        <Button onClick={handleGoogleLogin} variant="outline" className="w-full"><FaGoogle /> Login With Google</Button>
+
       </Card>
     </div>
   );
