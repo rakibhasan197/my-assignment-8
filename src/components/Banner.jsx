@@ -25,11 +25,11 @@ const Banner = () => {
 
       
         <div className='relative z-10 text-white max-w-3xl space-y-5'>
-          <h2 className='font-bold text-3xl sm:text-5xl md:text-6xl leading-tight'>
+          <h2 className='animate__animated animate__fadeInDown font-bold text-3xl sm:text-5xl md:text-6xl leading-tight'>
             Find Your Next <br /> Favorite Book Today
           </h2>
 
-          <p className='text-sm sm:text-base md:text-lg text-gray-200 max-w-2xl mx-auto'>
+          <p className='animate__animated animate__fadeInUp text-sm sm:text-base md:text-lg text-gray-200 max-w-2xl mx-auto'>
             Discover thousands of books, connect with amazing authors, and borrow
             your desired reads anytime from anywhere.
           </p>

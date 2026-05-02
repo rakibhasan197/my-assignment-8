@@ -2,115 +2,106 @@
 
 import { authClient } from "@/lib/auth-client";
 import { Button } from "@heroui/react";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/all-books", label: "All Books" },
+  { href: "/profile", label: "My Profile" },
+];
+
 const Navbar = () => {
-
-
   const [open, setOpen] = useState(false);
+  const userData = authClient.useSession();
+  const user = userData.data?.user;
 
-  const userData = authClient.useSession()
-   const user = userData.data?.user
-   console.log(user)
-
-   const handleLogOut = async ()=>{
-     await authClient.signOut();
-   }
+  const handleLogOut = async () => {
+    await authClient.signOut();
+  };
 
   return (
-    <div className="shadow px-2 relative">
-      <nav className="flex justify-between items-center py-3 mx-auto w-full container">
-        
-       
-        <Link href={'/'}>
-         
-          <h3 className="font-black text-lg">Book<span className="text-red-900">Nest</span></h3>
+    <header className="relative border-b bg-white px-2 shadow-sm">
+      <nav className="container mx-auto flex w-full items-center justify-between py-3">
+        <Link href="/">
+          <h3 className="text-lg font-black">
+            Book<span className="text-red-900">Nest</span>
+          </h3>
         </Link>
 
-        
-        <ul className="hidden md:flex items-center gap-5 text-sm">
-          <li>
-            <Link href={"/"}><Button variant="secondary" className=' text-red-900'>Home</Button></Link>
-          </li>
-          <li>
-            <Link href={"/all-books"}>All Books</Link>
-          </li>
-          
-          <li>
-            <Link href={"/profile"}>My Profile</Link>
-          </li>
+        <ul className="hidden items-center gap-5 text-sm md:flex">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <Link href={link.href}>{link.label}</Link>
+            </li>
+          ))}
         </ul>
 
-       
-        <div className="hidden md:flex gap-4">
-         { !user && <ul className="flex items-center text-sm gap-4">
-            <li>
-              <Link href={"/signup"}><Button variant="secondary" className="text-red-900">SignUp</Button></Link>
-            </li>
-            <li>
-              <Link href={"/signin"}><Button variant="outline">LogIn</Button></Link>
-            </li>
-          </ul>}
-
-          {
-            user && <div className="flex gap-4 items-center">
-              <h2 className="font-semibold">{user?.name}</h2>
-              <Button onClick={handleLogOut} size="sm" variant="danger">LogOut</Button>
+        <div className="hidden items-center gap-4 md:flex">
+          {!user ? (
+            <>
+              <Link href="/signin">
+                <Button variant="outline">Login</Button>
+              </Link>
+              <Link href="/signup">
+                <Button className="text-red-900" variant="secondary">
+                  Register
+                </Button>
+              </Link>
+            </>
+          ) : (
+            <div className="flex items-center gap-4">
+              <h2 className="font-semibold">{user.name}</h2>
+              <Button onClick={handleLogOut} size="sm" variant="danger">
+                Logout
+              </Button>
             </div>
-          }
+          )}
         </div>
 
         <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-2xl font-bold"
+          onClick={() => setOpen((value) => !value)}
+          className="rounded border px-3 py-1 text-sm font-semibold md:hidden"
+          type="button"
         >
-          {open ? "✕" : "☰"}
+          {open ? "Close" : "Menu"}
         </button>
       </nav>
 
-      
       {open && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t z-50">
-          <ul className="flex flex-col text-sm p-4 gap-4">
-            <li>
-              <Link onClick={() => setOpen(false)} href={"/"}>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link onClick={() => setOpen(false)} href={"/all-photos"}>
-                All Photos
-              </Link>
-            </li>
-            <li>
-              <Link onClick={() => setOpen(false)} href={"/pricing"}>
-                Pricing
-              </Link>
-            </li>
-            <li>
-              <Link onClick={() => setOpen(false)} href={"/profile"}>
-               My Profile
-              </Link>
-            </li>
-
-            <li>
-              <Link onClick={() => setOpen(false)} href={"/signup"}>
-                SignUp
-              </Link>
-            </li>
-            <li>
-              <Link onClick={() => setOpen(false)} href={"/signin"}>
-                LogIn
-              </Link>
-            </li>
-
-
+        <div className="absolute left-0 top-full z-50 w-full border-t bg-white shadow-lg md:hidden">
+          <ul className="flex flex-col gap-4 p-4 text-sm">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link onClick={() => setOpen(false)} href={link.href}>
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            {!user ? (
+              <>
+                <li>
+                  <Link onClick={() => setOpen(false)} href="/signin">
+                    Login
+                  </Link>
+                </li>
+                <li>
+                  <Link onClick={() => setOpen(false)} href="/signup">
+                    Register
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <li>
+                <button onClick={handleLogOut} type="button">
+                  Logout
+                </button>
+              </li>
+            )}
           </ul>
         </div>
       )}
-    </div>
+    </header>
   );
 };
 

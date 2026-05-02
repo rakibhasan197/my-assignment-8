@@ -1,4 +1,5 @@
 "use client";
+
 import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import {
@@ -11,8 +12,10 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
-import { toast } from "react-toastify";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { FaGoogle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -25,16 +28,13 @@ export default function SignUpPage() {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    const { data, error } = await authClient.signUp.email({
+    const { error } = await authClient.signUp.email({
       name,
       email,
       password,
       image,
     });
 
-    console.log(data, error);
-
-    // ❌ error handling first
     if (error) {
       if (
         error?.message?.includes("already") ||
@@ -46,7 +46,6 @@ export default function SignUpPage() {
       return toast.error("Signup failed");
     }
 
- 
     toast.success("Signup successful");
 
     setTimeout(() => {
@@ -54,12 +53,22 @@ export default function SignUpPage() {
     }, 900);
   };
 
+  const handleGoogleLogin = async () => {
+    const { error } = await authClient.signIn.social({
+      provider: "google",
+      callbackURL: "/",
+    });
+
+    if (error) {
+      toast.error(error.message || "Google login failed");
+    }
+  };
+
   return (
-    <Card className="border mx-auto w-125 py-10 mt-5">
+    <Card className="mx-auto mt-5 w-full max-w-md border px-5 py-10">
       <h1 className="text-center text-2xl font-bold">Register page</h1>
 
-      <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
-        
+      <Form className="mx-auto flex w-full flex-col gap-4" onSubmit={onSubmit}>
         <TextField isRequired name="name" type="text">
           <Label>Name</Label>
           <Input placeholder="Enter your name" />
@@ -116,13 +125,24 @@ export default function SignUpPage() {
 
         <Button
           type="submit"
-          className="w-full bg-blue-600 text-white font-semibold rounded-xl py-6 hover:bg-blue-700 transition-all duration-300 shadow-md"
+          className="w-full rounded-xl bg-blue-600 py-6 font-semibold text-white shadow-md transition-all duration-300 hover:bg-blue-700"
         >
           <Check />
           Register
         </Button>
-
       </Form>
+
+      <div className="mx-auto mt-5 flex w-full flex-col gap-3">
+        <p className="text-center text-sm">
+          Already have an account?{" "}
+          <Link className="font-semibold text-blue-600" href="/signin">
+            Login
+          </Link>
+        </p>
+        <Button onClick={handleGoogleLogin} variant="outline" className="w-full">
+          <FaGoogle /> Continue with Google
+        </Button>
+      </div>
     </Card>
   );
 }

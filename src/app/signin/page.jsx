@@ -14,6 +14,7 @@ import {
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { FaGoogle } from "react-icons/fa";
+import Link from "next/link";
 
 export default function SignInPage() {
   const router = useRouter();
@@ -43,11 +44,16 @@ export default function SignInPage() {
     }, 900);
   };
 
-  const handleGoogleLogin = async()=>{
-     await authClient.signIn.social({
-      provider: 'google'
-     })
-  }
+  const handleGoogleLogin = async () => {
+    const { error } = await authClient.signIn.social({
+      provider: "google",
+      callbackURL: "/",
+    });
+
+    if (error) {
+      toast.error(error.message || "Google login failed");
+    }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-100 px-4">
@@ -113,6 +119,12 @@ export default function SignInPage() {
 
         <p className="text-center">Or</p>
         <Button onClick={handleGoogleLogin} variant="outline" className="w-full"><FaGoogle /> Login With Google</Button>
+        <p className="mt-4 text-center text-sm">
+          New to BookNest?{" "}
+          <Link className="font-semibold text-blue-600" href="/signup">
+            Register
+          </Link>
+        </p>
 
       </Card>
     </div>

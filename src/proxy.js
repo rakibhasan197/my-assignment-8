@@ -1,25 +1,26 @@
 import { NextResponse } from 'next/server'
 import { auth } from './lib/auth'
-import { headers } from 'next/headers'
 
- 
-// This function can be marked `async` if using `await` inside
 export async function proxy(request) {
+let session = null
 
-const session = await auth.api.getSession({
-  headers : await headers()
-})
-
-if(!session){
-return NextResponse.redirect(new URL('/signin', request.url))
+try {
+  session = await auth.api.getSession({
+    headers: request.headers,
+  })
+} catch (error) {
+  console.error("Failed to read auth session in proxy", error)
 }
 
-  
+if (!session) {
+  const redirectURL = new URL('/signin', request.url)
+  redirectURL.searchParams.set('callbackURL', request.nextUrl.pathname)
+  return NextResponse.redirect(redirectURL)
 }
- 
-// Alternatively, you can use a default export:
-// export default function proxy(request: NextRequest) { ... }
- 
+
+return NextResponse.next()
+}
+
 export const config = {
-  matcher: ['/profile', '/all-books/:path'],
+  matcher: ['/profile', '/update-profile', '/all-books/:id'],
 }

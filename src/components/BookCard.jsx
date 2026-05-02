@@ -17,6 +17,7 @@ const BookCard = ({ book }) => {
           src={book.image_url}
           alt={book.title}
           fill
+          sizes="(max-width: 640px) 220px, (max-width: 1024px) 25vw, 220px"
           className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
         />
 

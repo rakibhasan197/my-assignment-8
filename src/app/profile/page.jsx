@@ -1,33 +1,44 @@
-'use client'
-import { authClient } from '@/lib/auth-client';
-import { Avatar, Button, Card } from '@heroui/react';
-import Link from 'next/link';
+"use client";
 
+import { authClient } from "@/lib/auth-client";
+import { Avatar, Button, Card } from "@heroui/react";
+import Link from "next/link";
 
 const MyProfilePage = () => {
-    const userData = authClient.useSession();
-     const user = userData.data?.user;
+  const userData = authClient.useSession();
+  const user = userData.data?.user;
 
-     console.log(user, 'user')
   return (
-    <div className='mt-10'>
-       <Card className='max-w-96 mx-auto flex flex-col items-center'>
-        <Avatar className='h-20 w-20'>
-        <Avatar.Image
-          alt="john Doe"
-          src={user?.image}
-          referrerPolicy='no-referrer'
+    <div className="mt-10 px-4">
+      <Card className="mx-auto flex max-w-md flex-col items-center gap-3 p-8 text-center">
+        <Avatar className="h-24 w-24">
+          <Avatar.Image
+            alt={user?.name || "User profile"}
+            src={user?.image}
+            referrerPolicy="no-referrer"
+          />
+          <Avatar.Fallback>{user?.name?.charAt(0) || "U"}</Avatar.Fallback>
+        </Avatar>
 
-        />
-        <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
-      </Avatar>
-      <h2 className='text-xl font-bold'>{user?.name}</h2>
-      <p className='text-muted'>{user?.email}</p>
+        <div>
+          <h2 className="text-xl font-bold">{user?.name || "User"}</h2>
+          <p className="text-sm text-gray-500">{user?.email}</p>
+        </div>
 
-     <Link href='/update-profile'>
-      <Button variant='secondary'>Update Profile</Button>
-     </Link>
-       </Card>
+        <div className="w-full rounded-lg bg-gray-50 p-4 text-left text-sm">
+          <p>
+            <span className="font-semibold">User ID:</span> {user?.id || "N/A"}
+          </p>
+          <p>
+            <span className="font-semibold">Email verified:</span>{" "}
+            {user?.emailVerified ? "Yes" : "No"}
+          </p>
+        </div>
+
+        <Link href="/update-profile">
+          <Button variant="secondary">Update Profile</Button>
+        </Link>
+      </Card>
     </div>
   );
 };
