@@ -78,7 +78,7 @@ export default function SignInPage() {
             }}
           >
             <Label>Email</Label>
-            <Input placeholder="john@example.com" />
+            <Input placeholder="Enter Your Email" />
             <FieldError />
           </TextField>
 
