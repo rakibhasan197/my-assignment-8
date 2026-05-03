@@ -22,7 +22,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="relative border-b border-blue-400/20 bg-slate-950/90 px-2 text-slate-100 shadow-lg shadow-blue-950/40 backdrop-blur">
+    <header className="relative border-b border-blue-400/20 bg-slate-950/90 px-2 text-slate-100 shadow-lg shadow-blue-950/40 backdrop-blur sticky top-0 z-50">
       <nav className="container mx-auto flex w-full items-center justify-between py-3">
         <Link href="/">
           <h3 className="text-lg font-black">
