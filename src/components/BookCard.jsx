@@ -5,24 +5,24 @@ import React from "react";
 
 const BookCard = ({ book }) => {
   return (
-    <div className="group w-full max-w-[220px] rounded-xl overflow-hidden bg-slate-900/90 border border-blue-400/20
+    <div className="group w-full rounded-xl overflow-hidden bg-slate-900/90 border border-blue-400/20
     shadow-md shadow-blue-950/30 hover:shadow-xl hover:shadow-blue-950/50
     transition-all duration-300 transform 
-    hover:-translate-y-2 mx-auto">
+    hover:-translate-y-2">
 
       
-     <div className="relative w-full aspect-[1/1] bg-slate-800 overflow-hidden">
+     <div className="relative h-40 w-full bg-slate-800 overflow-hidden sm:h-44">
   <Image
     src={book.image_url}
     alt={book.title}
     fill
-    sizes="220px"
+    sizes="(min-width: 1280px) 25vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
     className="object-cover group-hover:scale-105 transition-transform duration-500"
   />
 </div>
 
     
-      <div className="p-2 space-y-0.5 group-hover:-translate-y-1 transition-all duration-300">
+      <div className="min-h-28 p-3 space-y-1 group-hover:-translate-y-1 transition-all duration-300">
         <h1 className="text-sm font-bold text-slate-100 group-hover:text-blue-300">
           {book.title}
         </h1>
