@@ -12,7 +12,7 @@ const AboutUs = () => {
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-3xl font-bold text-center text-gray-800 mb-4"
+        className="text-3xl font-bold text-center text-white mb-4"
       >
         About Us
       </motion.h2>
@@ -22,7 +22,7 @@ const AboutUs = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="text-center text-gray-500 max-w-3xl mx-auto mb-10"
+        className="text-center text-slate-300 max-w-3xl mx-auto mb-10"
       >
         We are building a modern digital library platform that helps readers
         explore, borrow, and enjoy books easily. Our mission is to make reading
@@ -52,10 +52,10 @@ const AboutUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.2, duration: 0.5 }}
             whileHover={{ scale: 1.05 }}
-            className="p-6 bg-white shadow-md rounded-xl hover:shadow-2xl transition"
+            className="p-6 bg-slate-900/80 shadow-md shadow-blue-950/30 rounded-xl hover:shadow-2xl hover:shadow-blue-950/50 border border-blue-400/20 transition"
           >
-            <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-            <p className="text-gray-500 text-sm">{item.desc}</p>
+            <h3 className="font-bold text-lg mb-2 text-white">{item.title}</h3>
+            <p className="text-slate-300 text-sm">{item.desc}</p>
           </motion.div>
 
         ))}

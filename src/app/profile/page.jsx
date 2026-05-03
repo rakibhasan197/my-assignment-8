@@ -10,7 +10,7 @@ const MyProfilePage = () => {
 
   return (
     <div className="mt-10 px-4">
-      <Card className="mx-auto flex max-w-md flex-col items-center gap-3 p-8 text-center">
+      <Card className="mx-auto flex max-w-md flex-col items-center gap-3 border border-blue-400/20 bg-slate-900/90 p-8 text-center text-slate-100 shadow-2xl shadow-blue-950/50">
         <Avatar className="h-24 w-24">
           <Avatar.Image
             alt={user?.name || "User profile"}
@@ -21,11 +21,11 @@ const MyProfilePage = () => {
         </Avatar>
 
         <div>
-          <h2 className="text-xl font-bold">{user?.name || "User"}</h2>
-          <p className="text-sm text-gray-500">{user?.email}</p>
+          <h2 className="text-xl font-bold text-white">{user?.name || "User"}</h2>
+          <p className="text-sm text-slate-400">{user?.email}</p>
         </div>
 
-        <div className="w-full rounded-lg bg-gray-50 p-4 text-left text-sm">
+        <div className="w-full rounded-lg bg-slate-800 p-4 text-left text-sm">
           <p>
             <span className="font-semibold mx-auto">User ID:</span> {user?.id || "N/A"}
           </p>
@@ -33,7 +33,7 @@ const MyProfilePage = () => {
         </div>
 
         <Link href="/update-profile">
-          <Button variant="secondary">Update Profile</Button>
+          <Button className="bg-blue-600 text-white" variant="secondary">Update Profile</Button>
         </Link>
       </Card>
     </div>

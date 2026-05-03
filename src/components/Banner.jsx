@@ -17,13 +17,9 @@ const Banner = () => {
         <div className='absolute inset-0 bg-black/55'></div>
 
        
-        <div className='absolute inset-0 bg-gradient-to-r from-purple-900/50 via-violet-800/30 to-pink-800/40'></div>
+        <div className='absolute inset-0 bg-gradient-to-r from-slate-950/80 via-blue-950/55 to-slate-900/75'></div>
 
        
-        <div className='absolute w-72 h-72 bg-pink-500 rounded-full blur-3xl opacity-20 top-10 left-10'></div>
-        <div className='absolute w-72 h-72 bg-blue-500 rounded-full blur-3xl opacity-20 bottom-10 right-10'></div>
-
-      
         <div className='relative z-10 text-white max-w-3xl space-y-5'>
           <h2 className='animate__animated animate__fadeInDown font-bold text-3xl sm:text-5xl md:text-6xl leading-tight'>
             Find Your Next <br /> Favorite Book Today
@@ -36,7 +32,7 @@ const Banner = () => {
 
           <div className='flex flex-col sm:flex-row gap-4 justify-center pt-4'>
             <Link href={'/all-books'}>
-              <Button variant={'secondary'} className="text-red-950" size='lg'>
+              <Button className="bg-blue-600 text-white hover:bg-blue-700" size='lg'>
                 Browse Now
               </Button>
             </Link>

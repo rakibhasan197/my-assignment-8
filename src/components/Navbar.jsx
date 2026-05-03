@@ -5,7 +5,6 @@ import { Button } from "@heroui/react";
 import Link from "next/link";
 import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
-import { IoMenuSharp } from "react-icons/io5";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -23,11 +22,11 @@ const Navbar = () => {
   };
 
   return (
-    <header className="relative border-b bg-white px-2 shadow-sm">
+    <header className="relative border-b border-blue-400/20 bg-slate-950/90 px-2 text-slate-100 shadow-lg shadow-blue-950/40 backdrop-blur">
       <nav className="container mx-auto flex w-full items-center justify-between py-3">
         <Link href="/">
           <h3 className="text-lg font-black">
-            Book<span className="text-red-900">Nest</span>
+            Book<span className="text-blue-400">Nest</span>
           </h3>
         </Link>
 
@@ -43,10 +42,10 @@ const Navbar = () => {
           {!user ? (
             <>
               <Link href="/signin">
-                <Button variant="outline">Login</Button>
+                <Button className="border border-blue-400/40 text-blue-100" variant="outline">Login</Button>
               </Link>
               <Link href="/signup">
-                <Button className="text-red-900" variant="secondary">
+                <Button className="bg-blue-600 text-white" variant="secondary">
                   Register
                 </Button>
               </Link>
@@ -54,7 +53,7 @@ const Navbar = () => {
           ) : (
             <div className="flex items-center gap-4">
               <h2 className="font-semibold">{user.name}</h2>
-              <Button onClick={handleLogOut} size="sm" variant="danger">
+              <Button onClick={handleLogOut} className="bg-blue-600 text-white" size="sm">
                 Logout
               </Button>
             </div>
@@ -63,7 +62,7 @@ const Navbar = () => {
 
         <button
           onClick={() => setOpen((value) => !value)}
-          className="rounded border px-3 py-1 text-sm font-semibold md:hidden"
+          className="rounded border border-blue-400/40 px-3 py-1 text-sm font-semibold text-blue-100 md:hidden"
           type="button"
         >
           {open ? "X" : <FiMenu />}
@@ -71,7 +70,7 @@ const Navbar = () => {
       </nav>
 
       {open && (
-        <div className="absolute left-0 top-full z-50 w-full border-t bg-white shadow-lg md:hidden">
+        <div className="absolute left-0 top-full z-50 w-full border-t border-blue-400/20 bg-slate-950 text-slate-100 shadow-lg md:hidden">
           <ul className="flex flex-col gap-4 p-4 text-sm">
             {navLinks.map((link) => (
               <li key={link.href}>

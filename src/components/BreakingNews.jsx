@@ -19,19 +19,19 @@ const books = [
 
 const BreakingNews = () => {
   return (
-    <div className='flex items-center gap-4 p-3 bg-gradient-to-r from-gray-200 via-white to-gray-200 my-4 container mx-auto rounded-lg shadow-sm'>
+    <div className='flex items-center gap-4 p-3 bg-slate-900/80 my-4 container mx-auto rounded-lg shadow-lg shadow-blue-950/30 border border-blue-400/20'>
       
    
-      <Button className="bg-red-500 text-white px-4 py-2 rounded-md shadow-md whitespace-nowrap mr-3">
+      <Button className="bg-blue-600 text-white px-4 py-2 rounded-md shadow-md whitespace-nowrap mr-3">
         Latest Books
       </Button>
 
      
       <Marquee pauseOnHover speed={50}>
-        <div className='flex gap-8 text-sm font-medium text-gray-700'>
+        <div className='flex gap-8 text-sm font-medium text-slate-200'>
           {books.map((b) => (
             <span key={b.id} className='flex items-center gap-2'>
-              📚 {b.title} <span className='text-gray-400'>•</span>
+              Book: {b.title} <span className='text-blue-300'>|</span>
             </span>
           ))}
         </div>

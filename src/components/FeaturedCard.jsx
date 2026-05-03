@@ -47,7 +47,7 @@ const FeatureCard = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-3xl font-bold text-center mb-10 text-gray-800"
+        className="text-3xl font-bold text-center mb-10 text-white"
       >
         Our Features
       </motion.h2>
@@ -57,7 +57,7 @@ const FeatureCard = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="text-center text-gray-500 max-w-2xl mx-auto mb-10"
+        className="text-center text-slate-300 max-w-2xl mx-auto mb-10"
       >
         Explore powerful features designed to make your reading experience smooth,
         fast, and enjoyable. Everything you need is in one place.
@@ -73,19 +73,19 @@ const FeatureCard = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2, duration: 0.5 }}
             whileHover={{ scale: 1.07, y: -10, rotate: 1 }}
-            className="group bg-white rounded-xl p-6 shadow-md 
-            hover:shadow-2xl transition-all duration-500"
+            className="group bg-slate-900/80 rounded-xl p-6 shadow-md shadow-blue-950/30 border border-blue-400/20
+            hover:shadow-2xl hover:shadow-blue-950/50 transition-all duration-500"
           >
 
             {/* TITLE */}
-            <h3 className="text-lg font-bold mb-3 group-hover:text-blue-600 transition">
+            <h3 className="text-lg font-bold mb-3 text-white group-hover:text-blue-300 transition">
               {item.title}
             </h3>
 
             {/* DESC */}
-            <ul className="space-y-1 text-sm text-gray-500">
+            <ul className="space-y-1 text-sm text-slate-300">
               {item.desc.map((d, i) => (
-                <li key={i} className="group-hover:text-gray-700 transition">
+                <li key={i} className="group-hover:text-blue-100 transition">
                   • {d}
                 </li>
               ))}

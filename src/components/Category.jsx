@@ -18,12 +18,12 @@ const Category = ({ selectedCategory, setSelectedCategory }) => {
 
   const buttonClass = (category) =>
     `justify-start ${
-      selectedCategory === category ? "bg-blue-600 text-white" : ""
+      selectedCategory === category ? "bg-blue-600 text-white" : "bg-slate-800 text-slate-200"
     }`;
 
   return (
-    <aside className="w-full shrink-0 rounded-xl border border-gray-200 bg-white p-4 shadow-sm lg:w-64">
-      <h3 className="mb-4 text-lg font-bold text-gray-800">Categories</h3>
+    <aside className="w-full shrink-0 rounded-xl border border-blue-400/20 bg-slate-900/80 p-4 shadow-lg shadow-blue-950/30 lg:w-64">
+      <h3 className="mb-4 text-lg font-bold text-white">Categories</h3>
       <div className="flex flex-row flex-wrap gap-3 lg:flex-col">
         <Button
           className={buttonClass("All")}

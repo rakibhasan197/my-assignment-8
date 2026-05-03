@@ -3,6 +3,12 @@
 @import "animate.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #07111f;
+  --foreground: #eaf2ff;
+}
+
+body {
+  background:
+    linear-gradient(135deg, #06101f 0%, #0b1f3a 48%, #102f5f 100%);
+  color: var(--foreground);
 }

@@ -30,13 +30,13 @@ const UpdateProfile = () => {
 
   return (
     <div className="container mx-auto mt-8 space-y-4 px-4">
-      <h2 className="text-center text-2xl font-bold">Update User Profile</h2>
+      <h2 className="text-center text-2xl font-bold text-white">Update User Profile</h2>
 
       <Form
         onSubmit={onSubmit}
-        className="mx-auto flex w-full max-w-md flex-col gap-4 rounded-md p-8 shadow"
+        className="mx-auto flex w-full max-w-md flex-col gap-4 rounded-md border border-blue-400/20 bg-slate-900/90 p-8 text-slate-100 shadow-2xl shadow-blue-950/50"
       >
-        <FaUser className="mx-auto rounded-full p-1 text-6xl shadow" />
+        <FaUser className="mx-auto rounded-full p-1 text-6xl text-blue-300 shadow" />
 
         <TextField isRequired name="name" type="text">
           <Label>Name</Label>

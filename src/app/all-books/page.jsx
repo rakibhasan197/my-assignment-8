@@ -32,14 +32,14 @@ const AllBooksPage = () => {
 
   return (
     <div className="container mx-auto my-10 px-4">
-      <h2 className="mb-8 text-center text-3xl font-bold">Explore All Books</h2>
+      <h2 className="mb-8 text-center text-3xl font-bold text-white">Explore All Books</h2>
 
       <div className="mb-6 flex justify-center">
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search books by title..."
-          className="w-full max-w-2xl rounded-lg border px-4 py-3 shadow-sm"
+          className="w-full max-w-2xl rounded-lg border border-blue-400/20 bg-slate-900/80 px-4 py-3 text-slate-100 shadow-lg shadow-blue-950/30 outline-none placeholder:text-slate-400 focus:border-blue-400"
         />
       </div>
 
@@ -51,7 +51,7 @@ const AllBooksPage = () => {
 
         <div className="flex-1">
           {filtered.length === 0 ? (
-            <p className="text-center text-gray-500">No books found</p>
+            <p className="text-center text-slate-300">No books found</p>
           ) : (
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
               {filtered.map((book) => (

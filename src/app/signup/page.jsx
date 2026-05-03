@@ -65,8 +65,9 @@ export default function SignUpPage() {
   };
 
   return (
-    <Card className="mx-auto mt-5 w-full max-w-md border px-5 py-10">
-      <h1 className="text-center text-2xl font-bold">Register page</h1>
+    <div className="px-4 py-10">
+    <Card className="mx-auto w-full max-w-md border border-blue-400/20 bg-slate-900/90 px-5 py-10 text-slate-100 shadow-2xl shadow-blue-950/50">
+      <h1 className="text-center text-2xl font-bold text-white">Register page</h1>
 
       <Form className="mx-auto flex w-full flex-col gap-4" onSubmit={onSubmit}>
         <TextField isRequired name="name" type="text">
@@ -117,7 +118,7 @@ export default function SignUpPage() {
         >
           <Label>Password</Label>
           <Input placeholder="Enter your password" />
-          <Description>
+          <Description className="text-slate-400">
             Must be at least 8 characters with 1 uppercase and 1 number
           </Description>
           <FieldError />
@@ -135,14 +136,15 @@ export default function SignUpPage() {
       <div className="mx-auto mt-5 flex w-full flex-col gap-3">
         <p className="text-center text-sm">
           Already have an account?{" "}
-          <Link className="font-semibold text-blue-600" href="/signin">
+          <Link className="font-semibold text-blue-300" href="/signin">
             Login
           </Link>
         </p>
-        <Button onClick={handleGoogleLogin} variant="outline" className="w-full">
+        <Button onClick={handleGoogleLogin} variant="outline" className="w-full border border-blue-400/40 text-blue-100">
           <FaGoogle /> Continue with Google
         </Button>
       </div>
     </Card>
+    </div>
   );
 }

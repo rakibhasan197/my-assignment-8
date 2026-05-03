@@ -56,10 +56,10 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-100 px-4">
-      <Card className="w-full max-w-md py-8 px-7 rounded-3xl shadow-2xl border border-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 px-4">
+      <Card className="w-full max-w-md py-8 px-7 rounded-3xl shadow-2xl shadow-blue-950/50 border border-blue-400/20 bg-slate-900/90 text-slate-100">
         
-        <h1 className="text-center text-3xl font-bold text-gray-800">
+        <h1 className="text-center text-3xl font-bold text-white">
           Login Here
         </h1>
        
@@ -102,7 +102,7 @@ export default function SignInPage() {
           >
             <Label>Password</Label>
             <Input placeholder="Enter your password" />
-            <Description className="text-xs text-gray-400">
+            <Description className="text-xs text-slate-400">
               Must be 8+ chars with uppercase & number
             </Description>
             <FieldError />
@@ -118,10 +118,10 @@ export default function SignInPage() {
         </Form>
 
         <p className="text-center">Or</p>
-        <Button onClick={handleGoogleLogin} variant="outline" className="w-full"><FaGoogle /> Login With Google</Button>
+        <Button onClick={handleGoogleLogin} variant="outline" className="w-full border border-blue-400/40 text-blue-100"><FaGoogle /> Login With Google</Button>
         <p className="mt-4 text-center text-sm">
           New to BookNest?{" "}
-          <Link className="font-semibold text-blue-600" href="/signup">
+          <Link className="font-semibold text-blue-300" href="/signup">
             Register
           </Link>
         </p>

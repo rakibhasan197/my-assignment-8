@@ -14,7 +14,7 @@ export default function Home() {
     <FeaturedBooks></FeaturedBooks>
     <FeaturedCard></FeaturedCard>
     <AboutUs></AboutUs>
-    <Footer></Footer>
+    
     
    </div>
   );
