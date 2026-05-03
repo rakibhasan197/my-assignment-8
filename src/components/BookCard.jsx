@@ -11,7 +11,7 @@ const BookCard = ({ book }) => {
     hover:-translate-y-2">
 
       
-     <div className="relative h-40 w-full bg-slate-800 overflow-hidden sm:h-44">
+     <div className="relative h-56 w-full bg-slate-800 overflow-hidden sm:h-60">
   <Image
     src={book.image_url}
     alt={book.title}
