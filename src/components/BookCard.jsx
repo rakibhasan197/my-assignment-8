@@ -11,7 +11,7 @@ const BookCard = ({ book }) => {
     hover:-translate-y-2">
 
       
-     <div className="relative h-56 w-full bg-slate-800 overflow-hidden sm:h-60">
+     <div className="relative h-[14.5rem] w-full bg-slate-800 overflow-hidden sm:h-[15.5rem]">
   <Image
     src={book.image_url}
     alt={book.title}
@@ -22,7 +22,7 @@ const BookCard = ({ book }) => {
 </div>
 
     
-      <div className="min-h-28 p-3 space-y-1 group-hover:-translate-y-1 transition-all duration-300">
+      <div className="min-h-[7.5rem] p-3 space-y-1 group-hover:-translate-y-1 transition-all duration-300">
         <h1 className="text-sm font-bold text-slate-100 group-hover:text-blue-300">
           {book.title}
         </h1>
